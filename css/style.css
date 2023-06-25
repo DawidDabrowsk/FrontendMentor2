@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.dark-side {
+  display: flex;
+  width: 30%;
+  height: 100vh;
+  background-image: url(../../images/bg-main-desktop.png);
+  background-size: cover;
+}
+
+.light-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 100vh;
+}
+.light-side .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 250px;
+  width: 50%;
+  height: 100%;
+}
+.light-side .wrapper .error-card, .light-side .wrapper .error-card-name, .light-side .wrapper .error-cvc {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+  visibility: hidden;
+}
+.light-side .wrapper label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.light-side .wrapper .name,
+.light-side .wrapper .card {
+  width: 350px;
+}
+.light-side .wrapper .col {
+  position: relative;
+  margin-bottom: 5px;
+}
+.light-side .wrapper .cvc {
+  margin-left: 10px;
+}
+.light-side .wrapper .label-cvc {
+  margin-left: 28px;
+}
+.light-side .wrapper .year,
+.light-side .wrapper .month {
+  width: 80px;
+}
+.light-side .wrapper input {
+  padding-left: 10px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgb(187, 184, 184);
+}
+.light-side .wrapper input::-moz-placeholder {
+  font-size: 16px;
+  color: rgb(187, 178, 178);
+}
+.light-side .wrapper input::placeholder {
+  font-size: 16px;
+  color: rgb(187, 178, 178);
+}
+.light-side .wrapper .confirm {
+  width: 350px;
+  height: 50px;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgb(6, 6, 70);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cards .card1,
+.cards .card2 {
+  position: absolute;
+}
+.cards .card1 {
+  width: 400px;
+  height: 250px;
+  left: 150px;
+  top: 100px;
+  background-image: url(../../images/bg-card-front.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 0px;
+  letter-spacing: 2px;
+}
+.cards .card1 .card-logo {
+  margin: 20px 0 0 20px;
+  width: 90px;
+  height: 50px;
+  background-image: url(../../images/card-logo.svg);
+  background-size: contain;
+}
+.cards .card1 .card-number, .cards .card1 .owner, .cards .card1 .date {
+  position: absolute;
+  color: #fff;
+}
+.cards .card1 .card-number {
+  bottom: 40%;
+  left: 7.5%;
+  font-size: 34px;
+}
+.cards .card1 .owner {
+  bottom: 20%;
+  left: 7.5%;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.cards .card1 .date {
+  bottom: 20%;
+  right: 7.5%;
+}
+.cards .card2 {
+  position: absolute;
+  width: 400px;
+  height: 250px;
+  left: 250px;
+  top: 350px;
+  background-image: url(../../images/bg-card-back.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.cards .card2 .cvc-number {
+  position: absolute;
+  top: 39%;
+  left: 80%;
+  letter-spacing: 4px;
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */

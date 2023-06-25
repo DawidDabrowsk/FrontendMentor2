@@ -1,0 +1,166 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	position: relative;
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+}
+
+.dark-side {
+	display: flex;
+	width: 30%;
+	height: 100vh;
+	background-image: url(../../images/bg-main-desktop.png);
+    background-size: cover;
+}
+
+.light-side {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+	height: 100vh;
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-left: 250px;
+		width: 50%;
+		height: 100%;
+
+        .error-card, .error-card-name, .error-cvc {
+            color: red;
+            font-size: 12px;
+            margin-bottom: 5px;
+            visibility: hidden;
+        }
+
+		label {
+			margin-bottom: 5px;
+			font-size: 16px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		.name,
+		.card {
+			width: 350px;
+		}
+
+		.col {
+			position: relative;
+			margin-bottom: 5px;
+		}
+
+		.cvc
+		 {
+			margin-left: 10px;
+		}
+
+        .label-cvc {
+            margin-left: 28px;
+        }
+
+		.year,
+		.month {
+			width: 80px;
+		}
+
+		input {
+			padding-left: 10px;
+			height: 40px;
+			// margin-bottom: 20px;
+			border-radius: 5px;
+            border: 1px solid rgb(187, 184, 184);
+		}
+
+		input::placeholder {
+			font-size: 16px;
+			color: rgb(187, 178, 178);
+		}
+
+		.confirm {
+			width: 350px;
+			height: 50px;
+			font-size: 16px;
+			color: #fff;
+			background-color: rgb(6, 6, 70);
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	}
+}
+
+.cards {
+	.card1,
+	.card2 {
+		position: absolute;
+	}
+
+	.card1 {
+		width: 400px;
+		height: 250px;
+		left: 150px;
+		top: 100px;
+		background-image: url(../../images/bg-card-front.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		border-radius: 0px;
+        letter-spacing: 2px;
+
+		.card-logo {
+			margin: 20px 0 0 20px;
+			width: 90px;
+			height: 50px;
+			background-image: url(../../images/card-logo.svg);
+			background-size: contain;
+		}
+
+        .card-number, .owner, .date {
+            position: absolute;
+            color: #fff;
+	}
+
+        .card-number {
+            bottom: 40%;
+            left: 7.5%;
+            font-size: 34px;
+        }
+
+        .owner {
+            bottom: 20%;
+            left: 7.5%;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .date {
+            bottom: 20%;
+            right: 7.5%;
+        }
+    }
+
+
+	.card2 {
+		position: absolute;
+		width: 400px;
+		height: 250px;
+		left: 250px;
+		top: 350px;
+		background-image: url(../../images/bg-card-back.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+
+        .cvc-number {
+            position: absolute;
+            top: 39%;left: 80%;
+            letter-spacing: 4px;
+            color: #fff;
+        }
+	}
+}
