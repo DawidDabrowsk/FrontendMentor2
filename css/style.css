@@ -27,18 +27,69 @@ body {
   height: 100vh;
 }
 .light-side .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-left: 250px;
   width: 50%;
   height: 100%;
 }
-.light-side .wrapper .error-card, .light-side .wrapper .error-card-name, .light-side .wrapper .error-cvc {
+.light-side .wrapper .popup-success {
+  display: none;
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.light-side .wrapper .popup-success h2 {
+  margin: 15px 0;
+  font-size: 42px;
+}
+.light-side .wrapper .popup-success h3 {
+  font-size: 24px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.575);
+}
+.light-side .wrapper .popup-success .continue {
+  margin: 47px 10px 0 0;
+  width: 352px;
+  height: 50px;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgb(6, 6, 70);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.light-side .wrapper .anim-start {
+  animation: showPopup 1s forwards;
+}
+.light-side .wrapper .anim-back {
+  animation: s 1s forwards;
+}
+.light-side .wrapper .main {
+  width: 80%;
+}
+.light-side .wrapper .main .anim-visible {
+  animation: visibleMain 1s forwards;
+}
+.light-side .wrapper .main .anim-invisible {
+  animation: invisibleMain 1s forwards;
+}
+.light-side .wrapper .error-card,
+.light-side .wrapper .error-card-name,
+.light-side .wrapper .error-cvc {
   color: red;
   font-size: 12px;
   margin-bottom: 5px;
   visibility: hidden;
+}
+.light-side .wrapper .small-letters {
+  margin-left: 10px;
+  font-size: 8px;
+  font-weight: normal;
 }
 .light-side .wrapper label {
   margin-bottom: 5px;
@@ -79,7 +130,7 @@ body {
   color: rgb(187, 178, 178);
 }
 .light-side .wrapper .confirm {
-  width: 350px;
+  width: 352px;
   height: 50px;
   font-size: 16px;
   color: #fff;
@@ -110,7 +161,9 @@ body {
   background-image: url(../../images/card-logo.svg);
   background-size: contain;
 }
-.cards .card1 .card-number, .cards .card1 .owner, .cards .card1 .date {
+.cards .card1 .card-number,
+.cards .card1 .owner,
+.cards .card1 .date {
   position: absolute;
   color: #fff;
 }
@@ -145,4 +198,42 @@ body {
   left: 80%;
   letter-spacing: 4px;
   color: #fff;
+}
+
+.wrong-input {
+  background-color: rgba(255, 0, 0, 0.2);
+  border: 1px solid red;
+}
+
+@keyframes showPopup {
+  from {
+    transform: translateX(1550%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes goToRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1500px);
+  }
+}
+@keyframes visibleMain {
+  from {
+    display: none;
+  }
+  to {
+    display: block;
+  }
+}
+@keyframes invisibleMain {
+  from {
+    display: block;
+  }
+  to {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

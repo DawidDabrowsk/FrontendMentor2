@@ -16,7 +16,7 @@ body {
 	width: 30%;
 	height: 100vh;
 	background-image: url(../../images/bg-main-desktop.png);
-    background-size: cover;
+	background-size: cover;
 }
 
 .light-side {
@@ -26,19 +26,83 @@ body {
 	width: 70%;
 	height: 100vh;
 	.wrapper {
+		position: relative;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		justify-content: center;
 		margin-left: 250px;
 		width: 50%;
 		height: 100%;
 
-        .error-card, .error-card-name, .error-cvc {
-            color: red;
-            font-size: 12px;
-            margin-bottom: 5px;
-            visibility: hidden;
-        }
+		.popup-success {
+			display: none;
+			position: absolute;
+			width: 80%;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+			
+
+			h2 {
+				margin: 15px 0;
+				font-size: 42px;
+			}
+
+			h3 {
+				font-size: 24px;
+				font-weight: normal;
+				color: rgba(0, 0, 0, 0.575);
+			}
+			.continue {
+				margin: 47px 10px 0 0;
+				width: 352px;
+				height: 50px;
+				font-size: 16px;
+				color: #fff;
+				background-color: rgb(6, 6, 70);
+				border-radius: 5px;
+				cursor: pointer;
+				
+			}
+		}
+
+		.anim-start {
+			animation: showPopup 1s forwards;
+		}
+
+		.anim-back {
+			animation: s 1s forwards;
+		}
+
+		
+
+		.main {
+			width: 80%;
+
+			.anim-visible {
+				animation: visibleMain 1s forwards;
+			}
+	
+			.anim-invisible {
+				animation: invisibleMain 1s forwards;
+			}
+		}
+
+		.error-card,
+		.error-card-name,
+		.error-cvc {
+			color: red;
+			font-size: 12px;
+			margin-bottom: 5px;
+			visibility: hidden;
+		}
+
+		.small-letters {
+			margin-left: 10px;
+			font-size: 8px;
+			font-weight: normal;
+		}
 
 		label {
 			margin-bottom: 5px;
@@ -57,14 +121,13 @@ body {
 			margin-bottom: 5px;
 		}
 
-		.cvc
-		 {
+		.cvc {
 			margin-left: 10px;
 		}
 
-        .label-cvc {
-            margin-left: 28px;
-        }
+		.label-cvc {
+			margin-left: 28px;
+		}
 
 		.year,
 		.month {
@@ -76,7 +139,7 @@ body {
 			height: 40px;
 			// margin-bottom: 20px;
 			border-radius: 5px;
-            border: 1px solid rgb(187, 184, 184);
+			border: 1px solid rgb(187, 184, 184);
 		}
 
 		input::placeholder {
@@ -85,7 +148,7 @@ body {
 		}
 
 		.confirm {
-			width: 350px;
+			width: 352px;
 			height: 50px;
 			font-size: 16px;
 			color: #fff;
@@ -111,7 +174,7 @@ body {
 		background-repeat: no-repeat;
 		background-size: contain;
 		border-radius: 0px;
-        letter-spacing: 2px;
+		letter-spacing: 2px;
 
 		.card-logo {
 			margin: 20px 0 0 20px;
@@ -121,30 +184,31 @@ body {
 			background-size: contain;
 		}
 
-        .card-number, .owner, .date {
-            position: absolute;
-            color: #fff;
+		.card-number,
+		.owner,
+		.date {
+			position: absolute;
+			color: #fff;
+		}
+
+		.card-number {
+			bottom: 40%;
+			left: 7.5%;
+			font-size: 34px;
+		}
+
+		.owner {
+			bottom: 20%;
+			left: 7.5%;
+			font-size: 14px;
+			text-transform: uppercase;
+		}
+
+		.date {
+			bottom: 20%;
+			right: 7.5%;
+		}
 	}
-
-        .card-number {
-            bottom: 40%;
-            left: 7.5%;
-            font-size: 34px;
-        }
-
-        .owner {
-            bottom: 20%;
-            left: 7.5%;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-
-        .date {
-            bottom: 20%;
-            right: 7.5%;
-        }
-    }
-
 
 	.card2 {
 		position: absolute;
@@ -156,11 +220,49 @@ body {
 		background-size: contain;
 		background-repeat: no-repeat;
 
-        .cvc-number {
-            position: absolute;
-            top: 39%;left: 80%;
-            letter-spacing: 4px;
-            color: #fff;
-        }
+		.cvc-number {
+			position: absolute;
+			top: 39%;
+			left: 80%;
+			letter-spacing: 4px;
+			color: #fff;
+		}
+	}
+}
+
+.wrong-input {
+	background-color: rgba(255, 0, 0, 0.2);
+	border: 1px solid red;
+}
+
+@keyframes showPopup{
+	from{
+		transform: translateX(1550%);
+	} to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes goToRight {
+	from{
+		transform: translateX(0);
+	} to {
+		transform: translateX(1500px);
+	}
+}
+
+@keyframes visibleMain {
+	from {
+		display: none;
+	} to {
+		display: block;
+	}
+}
+
+@keyframes invisibleMain {
+	from {
+		display: block;
+	} to {
+		display: none;
 	}
 }
